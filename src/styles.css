@@ -24,3 +24,11 @@ nav button {
     border-radius: 9999px;
     background-color: var(--light-cyan);
 }
+
+#content {
+    display: grid;
+    place-items: center;
+
+    height: auto;
+    padding: 100px;
+}
