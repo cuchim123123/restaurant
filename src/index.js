@@ -8,23 +8,30 @@ const content = document.querySelector("#content");
 const homeBtn = document.querySelector(".home-btn");
 const menuBtn = document.querySelector(".menu-btn");
 const aboutBtn = document.querySelector(".about-btn");
+const buttons = [homeBtn, menuBtn, aboutBtn];
 
-function loadPage(page){
+function loadPage(page, activeBtn){
+    buttons.forEach(btn => btn.classList.remove("active"));
+    activeBtn.classList.add("active");
+
     content.innerHTML = "";
     content.append(page());
+
+
 }
 
 // INITIAL PAGE
-loadPage(createHome);
+loadPage(createHome, homeBtn);
 
 homeBtn.addEventListener("click", ()=>{
-    loadPage(createHome);
+    loadPage(createHome, homeBtn);
 });
 
 aboutBtn.addEventListener("click", ()=>{
-    loadPage(createAbout);
+    loadPage(createAbout, aboutBtn);
 });
 
 menuBtn.addEventListener("click", ()=>{
-    loadPage(createMenu);
+    loadPage(createMenu, menuBtn);
 });
+

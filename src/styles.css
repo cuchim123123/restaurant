@@ -23,6 +23,12 @@ nav button {
     padding: 1.3rem 2rem;
     border-radius: 9999px;
     background-color: var(--light-cyan);
+    transition: 0.2s;
+}
+
+nav button.active {
+    transform: scale(1.2);
+    font-weight: bold;
 }
 
 #content {
